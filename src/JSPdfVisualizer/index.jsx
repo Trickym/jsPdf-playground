@@ -6,7 +6,7 @@ function JSPdfVisualizer() {
     localStorage?.getItem("darkMode") &&
       localStorage?.getItem("darkMode") != "undefined"
       ? JSON.parse(localStorage?.getItem("darkMode"))
-      : false
+      : true
   );
   const [jsPDFCode, setJsPDFCode] = useState(
     "//JS PDF VISUALIZER \nconst doc = new jsPDF();\n\ndoc.setFontSize(28)\ndoc.text('Edit to see magic happen',10,15)\n//Write your code here!\n\nreturn doc.output('blob');//Don't edit or delete this return statement.\n"
