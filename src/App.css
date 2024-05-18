@@ -1,0 +1,25 @@
+.th-mobile{
+  display: none !important;
+}
+.th-desktop{
+  display: block !important;
+}
+
+
+@media (max-width: 800px) {
+  .th-mobile{
+    display: block !important;
+  }
+  .th-desktop{
+    display: none !important;
+  }
+}
+
+@media (min-width: 801px) {
+  .th-mobile{
+    display: none !important;
+  }
+  .th-desktop{
+    display: block !important;
+  }
+}
