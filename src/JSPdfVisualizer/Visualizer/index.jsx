@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
+import "jspdf-autotable";
 import { Worker, Viewer, ProgressBar } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
