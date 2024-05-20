@@ -10,9 +10,19 @@ function App() {
       : true
   );
 
+  const handleDarkMode = (dark) => {
+    setDark(dark);
+    console.log(dark);
+    localStorage.setItem("darkMode", JSON.stringify(dark));
+  };
+
   return (
     <div className={dark ? "dark" : ""}>
-      <JSPdfVisualizer dark={dark} setDark={setDark} />
+      <JSPdfVisualizer
+        dark={dark}
+        setDark={setDark}
+        handleDarkMode={handleDarkMode}
+      />
     </div>
   );
 }

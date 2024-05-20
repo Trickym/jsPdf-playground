@@ -1,21 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "../../utilComponent/Modal";
 import Label from "../../utilComponent/Label";
 import TextInput from "../../utilComponent/TextInput";
 import Select from "../../utilComponent/Select";
 import TextArea from "../../utilComponent/TextArea";
 import Loader from "../../utilComponent/Loader";
+import { SHEET_URL } from "../../CONSTANTS";
 
-function FeedbackModal({
-  open,
-  handleClose,
-  errorMessage,
-  values,
-  loading,
-  handleInput,
-  submitted,
-  submitFeedback,
-}) {
+function FeedbackModal({ open, onClose }) {
+  const [values, setValues] = useState({});
+  const [errorMessage, setErrorMessage] = useState();
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const handleInput = (event) => {
+    setErrorMessage("");
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const validate = () => {
+    if (!values.Name) {
+      setErrorMessage("Name is a reuired field!");
+      return;
+    }
+    if (!values.Review) {
+      setErrorMessage("Review is a required field!");
+      return;
+    }
+    if (!values.Templates) {
+      setErrorMessage("Select your preference about templates!");
+      return;
+    }
+  };
+
+  const submitFeedback = (e) => {
+    e.preventDefault();
+    validate();
+    setLoading(true);
+    const formData = new FormData();
+    Object.keys(values)?.map((key) => {
+      formData.append(key, values[key]);
+    });
+    fetch(SHEET_URL, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then(() => {
+        setSubmitted(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        setErrorMessage(err?.toString());
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
+  const handleClose = () => {
+    setSubmitted(false);
+    setValues({});
+    setErrorMessage();
+    onClose();
+  };
   return (
     <Modal
       show={open}
