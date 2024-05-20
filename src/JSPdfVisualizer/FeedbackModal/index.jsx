@@ -37,7 +37,7 @@ function FeedbackModal({
                 type="submit"
                 form="feedbackForm"
                 disabled={loading}
-                className="bg-blue-600 text-white rounded px-3 py-1"
+                className="bg-blue-600 text-white rounded px-4 py-1"
               >
                 {loading && <Loader />} Save
               </button>
