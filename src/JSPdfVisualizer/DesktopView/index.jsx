@@ -1,7 +1,7 @@
 import React from "react";
 import CustomEditor from "../Editor";
 import Visualizer from "../Visualizer";
-
+import RatingIcon from "../../assets/ratings.png";
 const DesktopView = ({
   dark,
   setDark,
@@ -85,38 +85,10 @@ const DesktopView = ({
             <h2 className="m-0 text-xl">Output</h2>
             <button
               onClick={() => setReviewModal(true)}
-              className="p-1 border-2 rounded border-gray-400 dark:border-gray-500 "
+              className="p-1 border-2 rounded border-gray-400 dark:border-gray-500 flex space-x-1 "
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                version="1.1"
-                id="Layer_1"
-                x="0px"
-                y="0px"
-                viewBox="0 0 41 39"
-                width="18"
-                height="18"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                xml:space="preserve"
-              >
-                <path
-                  class="st0"
-                  d="M22.4,2.5l2,4c0.2,0.4,0.6,0.7,1.1,0.8l4.4,0.6c1.1,0.2,1.6,1.6,0.8,2.4l-3.2,3.1c-0.3,0.3-0.5,0.8-0.4,1.2  l0.8,4.4c0.2,1.1-1,2-2,1.5l-4-2.1c-0.4-0.2-0.9-0.2-1.3,0l-4,2.1c-1,0.5-2.2-0.3-2-1.5l0.8-4.4c0.1-0.5-0.1-0.9-0.4-1.2l-3.2-3.1  c-0.8-0.8-0.4-2.2,0.8-2.4l4.4-0.6c0.5-0.1,0.9-0.4,1.1-0.8l2-4C20.4,1.4,21.9,1.4,22.4,2.5z"
-                />
-                <path
-                  class="st0"
-                  d="M32.6,24.9l1.4,2.9c0.1,0.3,0.4,0.5,0.8,0.6l3.2,0.5c0.8,0.1,1.2,1.1,0.6,1.7l-2.3,2.3  c-0.2,0.2-0.3,0.6-0.3,0.9l0.6,3.2c0.1,0.8-0.7,1.5-1.5,1.1l-2.9-1.5c-0.3-0.2-0.7-0.2-0.9,0L28.4,38c-0.7,0.4-1.6-0.2-1.5-1.1  l0.6-3.2c0.1-0.3-0.1-0.7-0.3-0.9l-2.3-2.3c-0.6-0.6-0.3-1.6,0.6-1.7l3.2-0.5c0.3,0,0.6-0.3,0.8-0.6l1.4-2.9  C31.2,24.1,32.3,24.1,32.6,24.9z"
-                />
-                <path
-                  class="st0"
-                  d="M10.1,24.9l1.4,2.9c0.1,0.3,0.4,0.5,0.8,0.6l3.2,0.5c0.8,0.1,1.2,1.1,0.6,1.7l-2.3,2.3  c-0.2,0.2-0.3,0.6-0.3,0.9L14,37c0.1,0.8-0.7,1.5-1.5,1.1l-2.9-1.5c-0.3-0.2-0.7-0.2-0.9,0L5.8,38c-0.7,0.4-1.6-0.2-1.5-1.1l0.6-3.2  c0.1-0.3-0.1-0.7-0.3-0.9l-2.3-2.3C1.7,30,2,29,2.8,28.8L6,28.4c0.3,0,0.6-0.3,0.8-0.6l1.4-2.9C8.6,24.1,9.7,24.1,10.1,24.9z"
-                />
-              </svg>
+              <img src={RatingIcon} style={{ height: "18px" }} alt="" />{" "}
+              <p className="m-0 text-xs">Feedback</p>
             </button>
           </div>
           <Visualizer jsPDFCode={jsPDFCode} dark={dark} />

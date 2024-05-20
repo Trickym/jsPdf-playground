@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import CustomEditor from "../Editor";
 import Visualizer from "../Visualizer";
+import RatingIcon from "../../assets/ratings.png";
 import "./index.css";
 const MobileView = ({
   dark,
@@ -9,6 +10,7 @@ const MobileView = ({
   handleUnSavedCode,
   handleSaveCode,
   jsPDFCode,
+  setReviewModal,
 }) => {
   const [tabs] = useState([
     {
@@ -120,6 +122,18 @@ const MobileView = ({
         ) : (
           <Visualizer jsPDFCode={jsPDFCode} dark={dark} />
         )}
+      </div>
+      <div className="absolute bottom-5 right-5">
+        <button
+          onClick={() => setReviewModal(true)}
+          className="p-2 border-2 rounded-full  border-gray-400 dark:border-gray-500 flex space-x-1 "
+        >
+          <img
+            src={RatingIcon}
+            style={{ height: "35px", width: "35px" }}
+            alt=""
+          />{" "}
+        </button>
       </div>
     </>
   );
