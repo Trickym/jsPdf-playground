@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { Editor } from "@monaco-editor/react";
+import _ from "lodash";
 function CustomEditor({ unsavedCode, handleUnSavedCode, dark }) {
+  const handleEditorDidMount = (editor, monaco) => {
+    window._ = _;
+  };
   return (
     <Editor
+      onMount={handleEditorDidMount}
       theme={dark ? "vs-dark" : "light"}
       className="h-dvh border-gray-400 dark:border-gray-500 border border-l-0"
       defaultLanguage="javascript"
