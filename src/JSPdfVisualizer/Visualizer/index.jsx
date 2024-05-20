@@ -50,7 +50,6 @@ function Visualizer({ jsPDFCode, dark }) {
           ZoomIn,
           ZoomOut,
         } = slots;
-        console.log({ slots });
         return (
           <div className="flex align-middle justify-between w-full">
             <div className="flex space-x-3">
@@ -100,8 +99,8 @@ function Visualizer({ jsPDFCode, dark }) {
   });
 
   return (
-    <div className="w-100">
-      <div className="h-dvh border-gray-400 dark:border-gray-500 border border-r-0 border-l-0">
+    <div className="w-100 h-[calc(100vh-50px)]">
+      <div className="h-full border-gray-400 dark:border-gray-500 border border-r-0 border-l-0">
         {error ? (
           <div className="h-full px-2 text-red-800 bg-red-200 dark:bg-zinc-900 dark:text-gray-300 overflow-scroll">
             <p className="text-xl">Error! </p>

@@ -38,10 +38,9 @@ const MobileView = ({
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="toggle-dark-mode-mobile-icon sun svg replaced-svg"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -61,10 +60,9 @@ const MobileView = ({
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="moon svg replaced-svg"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
@@ -73,6 +71,7 @@ const MobileView = ({
         <div className="flex">
           {tabs?.map(({ label, value }, index) => (
             <div
+              key={value}
               onClick={() => setSelectedTab(value)}
               className={
                 "px-5 py-1 tab cursor-pointer " +
@@ -100,13 +99,13 @@ const MobileView = ({
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M2.91675 1.75L11.0834 7L2.91675 12.25V1.75Z"
               stroke="#fff"
-              stroke-width="1.4"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
