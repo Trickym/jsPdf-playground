@@ -126,7 +126,7 @@ const MobileView = ({
       <div className="absolute bottom-5 right-5">
         <button
           onClick={() => setReviewModal(true)}
-          className="p-2 border-2 rounded-full  border-gray-400 dark:border-gray-500 flex space-x-1 "
+          className="p-2 border rounded-full bg-white dark:bg-zinc-900 dark:bg-transparent shadow-xl  border-gray-400 dark:border-gray-500 flex space-x-1 "
         >
           <img
             src={RatingIcon}
