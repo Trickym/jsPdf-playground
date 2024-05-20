@@ -5,6 +5,7 @@ import { Worker, Viewer, ProgressBar } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import "@react-pdf-viewer/default-layout/lib/styles/index.css";
+import _ from "lodash";
 function Visualizer({ jsPDFCode, dark }) {
   const [pdfUrl, setPdfUrl] = useState("");
   const [error, setError] = useState("");
@@ -18,6 +19,7 @@ function Visualizer({ jsPDFCode, dark }) {
       const context = new Function(...Object.keys(sandbox), `${jsPDFCode};`); // Create a function with the jsPDF code
       const pdfBlob = context.apply(null, Object.values(sandbox)); // Apply the function with the sandbox environment
       const pdfBlobUrl = URL.createObjectURL(pdfBlob);
+
       setPdfUrl(pdfBlobUrl);
       setError("");
     } catch (err) {
