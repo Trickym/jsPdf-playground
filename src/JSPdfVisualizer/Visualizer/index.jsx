@@ -9,9 +9,23 @@ import _ from "lodash";
 function Visualizer({ jsPDFCode, dark }) {
   const [pdfUrl, setPdfUrl] = useState("");
   const [error, setError] = useState("");
+  const [pdfKey, setPdfKey] = useState(0);
   useEffect(() => {
     generatePDF();
   }, [jsPDFCode]);
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (!document.hidden) {
+        setPdfKey((prevKey) => prevKey + 1); // Increment key to force re-render
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
 
   const generatePDF = () => {
     try {
@@ -113,6 +127,7 @@ function Visualizer({ jsPDFCode, dark }) {
               workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
             >
               <Viewer
+                key={pdfKey}
                 theme={{ theme: dark ? "dark" : "light" }}
                 fileUrl={pdfUrl}
                 renderLoader={(percentages) => (

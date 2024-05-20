@@ -9,10 +9,11 @@ function App() {
       ? JSON.parse(localStorage?.getItem("darkMode"))
       : true
   );
+
   return (
-      <div className={dark ? "dark" : ""}>
-        <JSPdfVisualizer dark={dark} setDark={setDark} />
-      </div>
+    <div className={dark ? "dark" : ""}>
+      <JSPdfVisualizer dark={dark} setDark={setDark} />
+    </div>
   );
 }
 
