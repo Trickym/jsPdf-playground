@@ -1,5 +1,7 @@
 # jsPDF Playground
 
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2djZnU2aHB2bDIwMXR0dDJvMTJtdnA1OGYybXUwdmU1cjRmZ2FhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/PH1BHV4KB54YsXOk4R/giphy.gif)
+
 A playground to view your jsPDF code in action. This tool helps you create, customize, and preview PDFs directly in your browser, streamlining your development process. You can also choose from go-to templates to quickly start your project and make necessary edits.
 
 ## Features
@@ -59,7 +61,7 @@ Contributions are welcome! Please fork the repository and create a pull request 
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
 
 ## Acknowledgments
 
