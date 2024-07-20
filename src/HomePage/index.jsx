@@ -7,7 +7,7 @@ const HomePage = ({}) => {
   return (
     <div>
       {/* HEADER */}
-      <div className="w-full p-5 flex justify-between items-center">
+      <div className="w-full p-5 flex justify-between items-center flex-wrap">
         <div className="flex items-center gap-4">
           <img src={Logo} className="h-[60px]" />
         </div>

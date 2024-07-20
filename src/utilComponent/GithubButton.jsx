@@ -4,7 +4,7 @@ const GithubButton = () => {
   return (
     <a href="https://github.com/Trickym/jsPdf-playground">
       <button className="github-button">
-        Star this repo
+        <span className="hidden xs:block">Star this repo</span>
         <svg
           fill="#ffffff"
           xmlns="http://www.w3.org/2000/svg"

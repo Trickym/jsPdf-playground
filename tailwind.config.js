@@ -24,6 +24,10 @@ export default {
     // add other classes you use dynamically
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: "430px",
+      },
+    },
   },
 };
