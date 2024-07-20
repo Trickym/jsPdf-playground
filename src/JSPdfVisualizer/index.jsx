@@ -17,8 +17,8 @@ function JSPdfVisualizer({ dark, handleDarkMode }) {
   };
 
   return (
-    <div className={"w-100  "}>
-      <div className="w-100 text-gray-700 dark:bg-gray-900 dark:text-gray-100 ">
+    <div className={"w-full  "}>
+      <div className="w-full text-gray-700 dark:bg-gray-900 dark:text-gray-100 ">
         <div className="th-desktop">
           <DesktopView
             dark={dark}

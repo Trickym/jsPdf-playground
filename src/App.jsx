@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import JSPdfVisualizer from "./JSPdfVisualizer";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./HomePage";
 
 function App() {
   const [dark, setDark] = useState(
@@ -18,11 +20,19 @@ function App() {
 
   return (
     <div className={dark ? "dark" : ""}>
-      <JSPdfVisualizer
-        dark={dark}
-        setDark={setDark}
-        handleDarkMode={handleDarkMode}
-      />
+      <Routes>
+        <Route
+          path="/playground"
+          element={
+            <JSPdfVisualizer
+              dark={dark}
+              setDark={setDark}
+              handleDarkMode={handleDarkMode}
+            />
+          }
+        />
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
