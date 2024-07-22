@@ -48,7 +48,7 @@
 }
 
 .comic-button:active {
-  background-color: #fcf414;
+  background-color: #fff;
   box-shadow: none;
   transform: translateY(4px);
 }
