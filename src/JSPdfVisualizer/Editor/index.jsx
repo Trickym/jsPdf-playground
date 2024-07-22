@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Editor } from "@monaco-editor/react";
 import _ from "lodash";
+import dayjs from "dayjs";
 function CustomEditor({ unsavedCode, handleUnSavedCode, dark }) {
   const handleEditorDidMount = (editor, monaco) => {
     window._ = _;
+    window.dayjs = dayjs;
   };
   return (
     <div className="h-[calc(100vh-50px)]">

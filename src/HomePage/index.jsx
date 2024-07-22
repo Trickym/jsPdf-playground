@@ -3,7 +3,11 @@ import Logo from "../assets/jspdf-logo.png";
 import Button from "../utilComponent/Button";
 import GithubButton from "../utilComponent/GithubButton";
 import Features from "./Features";
+import { useNavigate } from "react-router-dom";
+import { TEMPLATES } from "../CONSTANTS";
+import TemplateCard from "./TemplateCard";
 const HomePage = ({}) => {
+  const navigate = useNavigate();
   return (
     <div>
       {/* HEADER */}
@@ -59,9 +63,30 @@ const HomePage = ({}) => {
       <div className="w-full min-h-screen grid  place-items-center">
         <Features />
       </div>
+      <div className="py-6 relative flex flex-col gap-10 h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
+        <h2 class="mb-2 text-3xl font-extrabold leading-tight text-gray-900">
+          Templates
+        </h2>
+        <div class="flex flex-col w-full mb-5 sm:flex-row">
+          {TEMPLATES?.map(({ title, template, image }) => (
+            <TemplateCard
+              title={title}
+              img={image}
+              color={"blue-400"}
+              onClick={() => {
+                navigate("/playground", {
+                  state: {
+                    template: template,
+                  },
+                });
+              }}
+            />
+          ))}
+        </div>
+      </div>
       {/* Footer */}
       <div className="text-center py-5 text-2xl text-gray-500">
-        Build by Prashant
+        Copyright &copy; 2024. All rights reserved
       </div>
     </div>
   );

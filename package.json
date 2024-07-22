@@ -13,6 +13,7 @@
     "@monaco-editor/react": "^4.6.0",
     "@react-pdf-viewer/core": "^3.12.0",
     "@react-pdf-viewer/default-layout": "^3.12.0",
+    "dayjs": "^1.11.12",
     "jspdf": "^2.5.1",
     "jspdf-autotable": "^3.8.2",
     "lodash": "^4.17.21",

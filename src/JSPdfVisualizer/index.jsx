@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DesktopView from "./DesktopView";
 import MobileView from "./MobileView";
 import FeedbackModal from "./FeedbackModal";
 import { DEFAULT_CODE, SHEET_URL } from "../CONSTANTS";
+import { useLocation } from "react-router-dom";
 function JSPdfVisualizer({ dark, handleDarkMode }) {
   const [jsPDFCode, setJsPDFCode] = useState(DEFAULT_CODE);
   const [unsavedCode, setUnsavedCode] = useState(DEFAULT_CODE);
+  const location = useLocation();
+  useEffect(() => {
+    if (location?.state?.template) {
+      setTimeout(() => {
+        setJsPDFCode(location?.state?.template);
+        setUnsavedCode(location?.state?.template);
+      }, 100);
+    }
+  }, []);
 
   const [reviewModal, setReviewModal] = useState(false);
 
